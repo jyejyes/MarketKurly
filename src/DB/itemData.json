@@ -1,0 +1,239 @@
+{
+  "sectionTitle": [
+    { "id": 1, "sectionTitleName": "이 상품 어때요?" },
+    { "id": 2, "sectionTitleName": "후기 500개 돌파 상품" },
+    { "id": 3, "sectionTitleName": "놓치면 후회할 가격" },
+    { "id": 4, "sectionTitleName": "지금 가장 핫한 상품" }
+  ],
+
+  "sectionItem": [
+    {
+      "id": 1,
+      "img": "./image/recommend-item1",
+      "itemTitle": "[한애가] 담금초 매실 350ml",
+      "itemText": "명가의 노하우가 깃든 3년산 발효 식초",
+      "discount": "35",
+      "realPrice": "",
+      "originalPrice": "29000원"
+    },
+    {
+      "id": 1,
+      "img": "./image/recommend-item2",
+      "itemTitle": "[PUKKA] love 티백 사랑하는 사람에게 선물하세요",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000원"
+    },
+    {
+      "id": 1,
+      "img": "./image/recommend-item3",
+      "itemTitle": "[생강낙원] 목에 좋지만 알싸한 맛이 나는 생강차청",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 1,
+      "img": "./image/recommend-item4",
+      "itemTitle": "[KF365] 코로나가 너무 심해졌어",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 1,
+      "img": "./image/recommend-item5",
+      "itemTitle": "[TEAZEN] 건강해지는 비밀 콤부차 레몬맛",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 1,
+      "img": "./image/recommend-item6",
+      "itemTitle": "[정다운] 허브를 담은 훈제오리",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 1,
+      "img": "./image/recommend-item7",
+      "itemTitle": "[맛있겠다] 맛있어보이는 삼겹살 800g",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 1,
+      "img": "./image/recommend-item8",
+      "itemTitle": "[풀무원] 식물성 단백질 두부텐더, 다들 비건을 시작해보세요 환경과 동물을 위해서",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 1,
+      "img": "./image/recommend-item9",
+      "itemTitle": "[고소한] 아몬드유 100개입",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 1,
+      "img": "./image/recommend-item10",
+      "itemTitle": "[우리밀] 우리밀로 만든 튀김가루 부침가루 세트",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 1,
+      "img": "./image/recommend-item11",
+      "itemTitle": "[ZINC] 건강에 좋은 솔가 아연 50",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 1,
+      "img": "./image/recommend-item12",
+      "itemTitle": "[새로 사야하는데] 후라이팬 스몰 미디움 사이즈 2개입 세트",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+
+    {
+      "id": 2,
+      "img": "./image/item1.jpg",
+      "itemTitle": "[라메종드아모린] 살레위드 어려운 이름",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 2,
+      "img": "./image/item2.jpg",
+      "itemTitle": "[카스티요 데 카네나] 유기농 피쿠알 엑스트리버진",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 2,
+      "img": "./image/item3.jpg",
+      "itemTitle": "[한국의] 맛이 좋은 곶감",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 2,
+      "img": "./image/item4.jpg",
+      "itemTitle": "[아리조나] 아이스티 500mL 2종",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+
+    {
+      "id": 3,
+      "img": "./image/item5.jpg",
+      "itemTitle": "[우리밀] 튀김기루 3봉",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 3,
+      "img": "./image/item6.jpg",
+      "itemTitle": "[건강한] 계란은 역시 동물복지계란",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 3,
+      "img": "./image/item7.jpg",
+      "itemTitle": "[고소] 김자반입니다 맛있겠죠",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 3,
+      "img": "./image/item8.jpg",
+      "itemTitle": "[윙스윙] 돈까스 치킨까스 세트",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 3,
+      "img": "./image/recommend-item2",
+      "itemTitle": "[PUKKA] love 티백 사랑하는 사람에게 선물하세요",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000원"
+    },
+    {
+      "id": 3,
+      "img": "./image/recommend-item3",
+      "itemTitle": "[생강낙원] 목에 좋지만 알싸한 맛이 나는 생강차청",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 3,
+      "img": "./image/recommend-item4",
+      "itemTitle": "[KF365] 코로나가 너무 심해졌어",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 3,
+      "img": "./image/recommend-item5",
+      "itemTitle": "[TEAZEN] 건강해지는 비밀 콤부차 레몬맛",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+
+    {
+      "id": 4,
+      "img": "./image/item9.jpg",
+      "itemTitle": "[우리것이 최고] 진미채 반찬으로 하기 전",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 4,
+      "img": "./image/item10.jpg",
+      "itemTitle": "[별미] 고기완자입니다다",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 4,
+      "img": "./image/item11.jpg",
+      "itemTitle": "[하송] 엄마미소 튀김용 소스",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    },
+    {
+      "id": 4,
+      "img": "./image/item12.jpg",
+      "itemTitle": "[새들러하우스] 크로플 과자",
+      "discount": "10",
+      "realPrice": "",
+      "originalPrice": "32000"
+    }
+  ]
+}

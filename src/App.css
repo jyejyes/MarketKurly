@@ -1,38 +1,463 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&family=Noto+Sans+KR&display=swap");
+
+:root {
+  --main-purple: rgb(90, 21, 124);
+  --white-color: rgb(248, 248, 248);
+  --gray-color: rgb(140, 140, 140);
+
+  /* 폰트 사이즈 */
+  font-family: "Roboto", sans-serif;
+  --xxlarge-font: 32px;
+  --xlarge-font: 28px;
+  --large-font: 20px;
+  --medium-font: 16px;
+  --small-font: 14px;
+  --xsmall-font: 12px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 1050px;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  all: unset;
+}
+
+.pop {
+  font-size: var(--small-font);
+  background-color: var(--main-purple);
+  color: var(--white-color);
+  width: 100%;
+  height: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  box-shadow: 0px 1px 10px rgb(245, 245, 245);
+}
+
+.info .info_right li:nth-child(1) a {
+  color: var(--main-purple);
+  font-size: var(small);
+}
+
+.info_cc {
+  position: relative;
+}
+/* info_cclist 가 넘어서 감 absolute 위치 지정을 위해서는 부모가 relative 여야함 */
+
+/* 로그인 */
+.main_login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  margin: 50px 0px;
+}
+
+.login h1 {
+  display: flex;
+  justify-content: center;
+  font-size: var(--large-font);
+  margin: 30px 0px;
+}
+
+.loginform {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginform > input {
+  width: 300px;
+  font-size: var(--small-font);
+  padding: 15px;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 3px;
+  margin: 5px 0px;
+}
+
+.loginform > input:focus {
+  /* outline: 1px solid black; outline으로 사용하면 radios 가 설정되지 않음 */
+  outline: none;
+  box-shadow: 0 0 0 0.5px black;
+}
+
+.find_account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--xsmall-font);
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.find_account input[type="checkbox"] {
+  display: none;
+}
+
+.find_account input[type="checkbox"] + label {
+  display: flex;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--gray-color);
+  border-radius: 3px;
+}
+
+.find_account input[type="checkbox"]:checked + label {
+  display: flex;
+  width: 12px;
+  height: 12px;
+  background-color: var(--main-purple);
+  border: 1px solid var(--main-purple);
+}
+.secure_check {
+  display: flex;
+  align-items: center;
+}
+
+.secure_check label {
+  margin-right: 5px;
+}
+
+.loginform > button,
+.loginform .goSignup {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  font-size: var(--medium-font);
+  background-color: var(--main-purple);
+  color: white;
+  padding: 15px;
+  margin: 5px 0px;
+  border: 1px solid black;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.loginform .goSignup {
+  background-color: white;
+  color: var(--main-purple);
+}
+
+/* Signup */
+.main_signup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signup {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.signup_title {
+  width: 650px;
+  border-bottom: 2px solid black;
+  margin-bottom: 10px;
+}
+
+.signup_title h1 {
+  font-size: var(--xlarge-font);
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 50px 0px;
+}
+
+.signup_title .essential_input {
+  display: flex;
+  justify-content: flex-end;
+  font-size: var(--xsmall-font);
+  color: rgb(82, 82, 82);
+  margin: 10px 0px;
+}
+
+.signup .star {
+  color: rgb(228, 56, 56);
+  margin: 1px;
+}
+
+.signup_form {
+  width: 650px;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup_form form {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+table th {
+  padding: 13px;
+  text-align: start;
+  font-size: var(--small-font);
+  position: absolute;
+  transform: translateY(10px);
+  /* border: 1px solid blue; */
+}
+
+table td {
+  width: 77%;
+  padding: 10px;
+}
+
+table tr:nth-child(-n + 7) input,
+table .addBtn,
+table .birthday,
+.event_input {
+  width: 68%;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 4px;
+  padding: 14px;
+  font-size: var(--small-font);
+  margin-right: 1%;
+}
+
+/* table tr:nth-child(-n + 7) input:focus,
+.event_input:focus {
+  outline: none;
+  border: 1px solid black;
+} */
+
+table td p,
+.add_event_box {
+  font-size: var(--xsmall-font);
+  margin: 7px 0px;
+  color: rgb(82, 82, 82);
+}
+
+table td .more_add {
+  display: flex;
+}
+
+table .address {
+  margin-bottom: 10px;
+}
+
+.address_box {
+  display: none;
+}
+
+.birthday > input {
+  width: 31%;
+  border: none;
+  font-size: var(--small-font);
+  text-align: center;
+}
+
+table .addBtn {
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid var(--main-purple);
+  border-radius: 4px;
+  padding: 13px;
+  color: var(--main-purple);
+  cursor: pointer;
+}
+
+table a {
+  display: inline-block;
+  width: 23%;
+  border: 1px solid var(--main-purple);
+  padding: 12px 0px;
+  border-radius: 4px;
+  color: var(--main-purple);
+  font-size: var(--small-font);
+  font-weight: bold;
+  text-align: center;
+}
+
+table .gender,
+table .add_input {
+  width: 68%;
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--small-font);
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  display: inline-block;
+  cursor: pointer;
+  line-height: 25px;
+  padding-left: 30px;
+  background: url("/public/image/ico_checkbox.svg") left/22px no-repeat;
+}
+
+input[type="radio"]:checked + label {
+  display: inline-block;
+  cursor: pointer;
+  line-height: 25px;
+  padding-left: 30px;
+  background: url("/public/image/ico_checkbox_checked.svg") left/22px no-repeat;
+}
+
+table input::placeholder {
+  color: rgb(196, 196, 196);
+}
+
+.signup_btn {
+  background-color: var(--main-purple);
+  margin: 50px;
   color: white;
+  padding: 13px;
+  width: 15%;
+  text-align: center;
+  border-radius: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+/* 아이템 상세페이지 */
+
+.item_datail_page {
+  /* width: 1050px; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item_detail_title {
+  width: 1050px;
+  display: flex;
+}
+
+.item_detail_title img {
+  width: 42%;
+  height: 80%;
+}
+
+.item_detail_title .detail_title_text {
+  width: 58%;
+  margin: 10px 50px;
+}
+
+.detail_title_text > p {
+  color: var(--gray-color);
+  font-size: var(--small-font);
+}
+
+.detail_title_price {
+  padding: 20px 0px;
+  border-bottom: 1px solid rgb(241, 241, 241);
+}
+
+.detail_title_price > p:nth-child(1) {
+  font-size: var(--small-font);
+}
+
+.detail_title_price span:nth-child(2) {
+  font-size: var(--xlarge-font);
+  font-weight: bold;
+}
+.detail_title_price span span {
+  font-size: var(--large-font);
+  font-weight: bold;
+}
+
+.detail_title_price span:nth-child(3) {
+  font-size: var(--xlarge-font);
+  color: rgb(252, 105, 47);
+  font-weight: bold;
+  margin: 0px 10px;
+}
+
+.detail_title_price > p:nth-child(4) {
+  color: var(--gray-color);
+  text-decoration: line-through;
+  display: flex;
+  align-items: center;
+  margin: 5px 0px;
+}
+.detail_title_price > p:nth-child(4) img {
+  width: 25px;
+  margin-top: 2px;
+}
+
+.detail_title_price > p:last-child {
+  color: rgb(90, 21, 124);
+  margin: 10px 0px;
+  font-size: var(--small-font);
+}
+
+.item_detail_title > p {
+  background-color: rgb(90, 21, 124);
+}
+
+.detail_title_purchase {
+  text-align: end;
+  margin: 20px 0px;
+  padding: 0px 0px;
+}
+
+.detail_title_purchase p:nth-child(1) {
+  font-size: var(--small-font);
+}
+
+.detail_title_purchase p:nth-child(1) span {
+  font-size: var(--xlarge-font);
+  font-weight: bold;
+}
+
+.detail_title_purchase p:nth-child(2) {
+  font-size: var(--small-font);
+  font-weight: lighter;
+  margin: 10px 0px;
+}
+
+.detail_title_purchase p:nth-child(2) span {
+  background-color: rgb(252, 197, 47);
+  border: 1px solid rgb(252, 197, 47);
+  border-radius: 15px;
+  font-size: var(--xsmall-font);
+  padding: 1px 7px;
+  color: white;
+  margin-right: 5px;
+}
+
+.itemcart {
+  margin: 50px 0px;
+}
+.itemcartBtn {
+  background-color: var(--main-purple);
+  color: white;
+  text-align: center;
+  padding: 15px 150px;
 }
