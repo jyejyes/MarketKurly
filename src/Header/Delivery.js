@@ -33,7 +33,7 @@ const Container = styled.div`
   position: absolute;
   top: 63px;
   right: -45px;
-  z-index: 2;
+  z-index: 5;
   display: ${(props) => (props.state ? "block" : "none")};
   &:after {
     content: "";

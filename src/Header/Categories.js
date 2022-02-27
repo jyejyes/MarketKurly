@@ -7,12 +7,31 @@ import MenuDetail from "./MenuDetail";
 
 export default function Categories() {
   //fixed 로 바꿔주려고 만드는 함수
-  const [position, setPosition] = useState(0);
+  const [scrollY, setScrollY] = useState(window.scrollY);
+  const cateRef = useRef();
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+    if (scrollY > 70) {
+      cateRef.current.style.position = "fixed";
+    } else {
+      cateRef.current.style.position = "relative";
+    }
+  };
+
+  useEffect(() => {
+    const watch = () => {
+      window.addEventListener("scroll", handleScroll);
+    };
+    watch();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollY]);
 
   const [heartImg, setHeartImg] = useState(false);
   const [cartImg, setCartImg] = useState(false);
   const [locationImg, setLocationImg] = useState(false);
-  const [locaPop, setLocaPop] = useState(true);
+  const [locaPop, setLocaPop] = useState(false);
   const [allPop, setAllPop] = useState(false);
 
   const onAllMouse = () => setAllPop(true);
@@ -32,59 +51,68 @@ export default function Categories() {
   };
 
   return (
-    <CateSection>
-      <AllList onMouseOver={onAllMouse} onMouseOut={outAllMouse}>
-        <AllImg className="icon_all" src="./image/icon_all_cate.png" />
-        <List>전체 카테고리</List>
-        <AllMenu state={allPop}></AllMenu>
-      </AllList>
-      <List>신상품</List>
-      <List>베스트</List>
-      <List>알뜰쇼핑</List>
-      <List>특가/혜택</List>
+    <Wrap>
+      <CateSection ref={cateRef}>
+        <AllList onMouseOver={onAllMouse} onMouseOut={outAllMouse}>
+          <AllImg className="icon_all" src="./image/icon_all_cate.png" />
+          <List>전체 카테고리</List>
+          <AllMenu state={allPop}></AllMenu>
+        </AllList>
+        <List>신상품</List>
+        <List>베스트</List>
+        <List>알뜰쇼핑</List>
+        <List>특가/혜택</List>
 
-      <List>
-        <div className="search">
-          <SearchSection type="text" placeholder="검색어를 입력해주세요" />
-          <SearchIcon src="./image/ico_search.png" />
-        </div>
-      </List>
+        <List>
+          <div className="search">
+            <SearchSection type="text" placeholder="검색어를 입력해주세요" />
+            <SearchIcon src="./image/ico_search.png" />
+          </div>
+        </List>
 
-      <CateRight>
-        <List onMouseOver={onLocationMouse} onMouseOut={outLocationMouse}>
-          <RightImage
-            src={
-              locationImg
-                ? "./image/btn-location-on.svg"
-                : "./image/btn-location-off.svg"
-            }
-          />
-          <Delivery state={locaPop}></Delivery>
-        </List>
-        <List>
-          <RightImage
-            onMouseOver={onHeartMouse}
-            onMouseLeave={outHeartMouse}
-            src={
-              heartImg
-                ? "./image/btn-heart-on.svg"
-                : "./image/btn-heart-off.svg"
-            }
-          />
-        </List>
-        <List>
-          <RightImage
-            onMouseOver={onCartMouse}
-            onMouseLeave={outCartMouse}
-            src={
-              cartImg ? "./image/btn-cart-on.svg" : "./image/btn-cart-off.svg"
-            }
-          />
-        </List>
-      </CateRight>
-    </CateSection>
+        <CateRight>
+          <List onMouseOver={onLocationMouse} onMouseOut={outLocationMouse}>
+            <RightImage
+              src={
+                locationImg
+                  ? "./image/btn-location-on.svg"
+                  : "./image/btn-location-off.svg"
+              }
+            />
+            <Delivery state={locaPop}></Delivery>
+          </List>
+          <List>
+            <RightImage
+              onMouseOver={onHeartMouse}
+              onMouseLeave={outHeartMouse}
+              src={
+                heartImg
+                  ? "./image/btn-heart-on.svg"
+                  : "./image/btn-heart-off.svg"
+              }
+            />
+          </List>
+          <List>
+            <RightImage
+              onMouseOver={onCartMouse}
+              onMouseLeave={outCartMouse}
+              src={
+                cartImg ? "./image/btn-cart-on.svg" : "./image/btn-cart-off.svg"
+              }
+            />
+          </List>
+        </CateRight>
+      </CateSection>
+    </Wrap>
   );
 }
+
+// 카테고리를 최상위에서 이 태그로 감싸줌
+const Wrap = styled.div`
+  width: 100%;
+  height: 66px;
+  background-color: white;
+`;
 
 const CateSection = styled.ul`
   display: flex;
@@ -93,11 +121,10 @@ const CateSection = styled.ul`
   justify-content: center;
   align-items: center;
   background-color: white;
-  position: sticky;
   top: 0;
   left: 0;
-  z-index: 1;
-  box-shadow: 0px 3px 3px -2px rgb(200, 200, 200);
+  z-index: 5;
+  box-shadow: 0px 3px 3px -2px rgb(220, 220, 220);
   & > li:nth-child(-n + 5) {
     padding: 15px 34px;
   }

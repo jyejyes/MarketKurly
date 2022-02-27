@@ -7,6 +7,7 @@ import { useNavigate } from "react-router";
 
 export default function MainPageItems(props) {
   const itemList = dummy.sectionItem.filter((item) => item.id === props.id);
+
   const [count, setCount] = useState(0);
   const [prevBtn, setPrevBtn] = useState(false);
   const [nextBtn, setNextBtn] = useState(true);

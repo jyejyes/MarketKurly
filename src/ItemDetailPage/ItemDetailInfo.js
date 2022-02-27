@@ -30,6 +30,7 @@ const EachSection = styled.div`
 `;
 const Title = styled.span`
   color: rgb(100, 100, 100);
+  font-size: var(--small-font);
 `;
 
 const Text = styled.span`

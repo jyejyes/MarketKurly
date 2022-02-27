@@ -1,15 +1,16 @@
 import React from "react";
 import QuickNavBar from "../QuickNavBar";
-import ItemDetailCate from "./ItemDetailCate";
 import dummy from "../DB/itemData.json";
 import ItemDetailInfo from "./ItemDetailInfo";
-import NButton from "./NButton";
+import Cart from "./Cart";
+import styled from "styled-components";
+import ItemDetailMain from "./ItemDetailMain";
+import About from "./About";
+import TopButton from "../TopButton";
+import BottomBuy from "./BottomBuy";
 
 function ItemDetailPage() {
   const itemList = dummy.sectionItem.filter((item) => item.id === 1);
-  console.log(itemList[0].itemTitle);
-  console.log(itemList[0].img);
-  console.log(itemList[0].discount);
 
   //할인가 계산 함수
   function calPrice(original, discount_per) {
@@ -23,13 +24,15 @@ function ItemDetailPage() {
   return (
     <>
       <QuickNavBar />
+      <TopButton />
 
-      <section className="item_datail_page">
-        <div className="item_detail_title">
-          <img src={itemList[0].img}></img>
-          <div className="detail_title_text">
+      <Container>
+        <TitleSection>
+          <ItemImg src={itemList[0].img} />
+
+          <ItemDesciption>
             <h2>{itemList[0].itemTitle}</h2>
-            <p>{itemList[0].itemText}</p>
+            <MoreDesciption>{itemList[0].itemText}</MoreDesciption>
             <div className="detail_title_price">
               <p>회원할인가</p>
               <span>
@@ -45,64 +48,68 @@ function ItemDetailPage() {
               </p>
               <p>로그인 후 , 회원할인가와 적립혜택이 제공됩니다.</p>
             </div>
+
+            {/* 상세페이지 관련 제품 캐러셀 */}
+
             <ItemDetailInfo title="판매단위" text="1병"></ItemDetailInfo>
             <ItemDetailInfo title="중량/용량" text="350ml"></ItemDetailInfo>
-            <ItemDetailInfo title="구매수량" text=""></ItemDetailInfo>
-            <NButton></NButton>
-            {/* 
+            <ItemDetailInfo
+              title="배송구분"
+              text="샛별배송/택배배송"
+            ></ItemDetailInfo>
+            <ItemDetailInfo
+              title="포장타입"
+              text="상온/종이포장"
+            ></ItemDetailInfo>
+            <ItemDetailInfo
+              title="알레르기정보"
+              text="-밀 함유"
+            ></ItemDetailInfo>
+            <ItemDetailInfo
+              title="포장타입"
+              text="상온/종이포장"
+            ></ItemDetailInfo>
 
-            <div className="detail_title_info">
-              <p>
-                <div>
-                  <span className="detail_title_info_sub">판매단위</span>
-                  <span className="detail_title_info_con">dd</span>
-                </div>
-                <div>
-                  <span className="detail_title_info_sub">판매단위</span>
-                  <span className="detail_title_info_con">dd</span>
-                </div>
-              </p>
-              <p>
-                <div>
-                  <span className="detail_title_info_sub">판매단위</span>
-                  <span className="detail_title_info_con">dd</span>
-                </div>
-              </p>
-              <p>
-                <div>
-                  <div>
-                    <span className="detail_title_info_sub">판매단위</span>
-                    <span className="detail_title_info_con">dd</span>
-                  </div>
-                </div>
-              </p>
-              <p>
-                <div>
-                  <span className="detail_title_info_sub">판매단위</span>
-                  <span className="detail_title_info_con">dd</span>
-                </div>
-              </p>
-            </div>
-
-            <div className="detail_title_purchase">
-              <p>
-                총 상품금액: <span>13000(계산식 넣어야함 props로)</span>
-              </p>
-              <p>
-                <span>적립</span>로그인 후, 회원할인가와 적립혜택 제공
-              </p>
-            </div>
-            <div className="itemcart">
-              <button className="itemcartBtn">장바구니 담기</button>
-            </div> */}
-          </div>
-        </div>
-        {/* 캐러셀 슬라이드 */}
-        {/* 본문 */}
-      </section>
-      <ItemDetailCate />
+            <Cart
+              price={calPrice(itemList[0].originalPrice, itemList[0].discount)}
+            ></Cart>
+          </ItemDesciption>
+        </TitleSection>
+      </Container>
+      <About />
+      <ItemDetailMain />
+      <BottomBuy
+        price={calPrice(itemList[0].originalPrice, itemList[0].discount)}
+      />
     </>
   );
 }
 
 export default ItemDetailPage;
+
+const Container = styled.section`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+`;
+
+const TitleSection = styled.div`
+  width: 1050px;
+  display: flex;
+`;
+
+const ItemImg = styled.img`
+  width: 45%;
+  height: 550px;
+`;
+
+const ItemDesciption = styled.div`
+  width: 55%;
+  margin: 10px 50px;
+`;
+
+const MoreDesciption = styled.p`
+  color: var(--gray-color);
+  font-size: var(--small-font);
+`;

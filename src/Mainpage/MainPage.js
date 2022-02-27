@@ -9,11 +9,12 @@ import Item from "./Item";
 import dummy from "../DB/itemData.json";
 import SlideBox from "./SlideBox";
 import styled from "styled-components";
-import { getByTitle } from "@testing-library/dom";
+import TopButton from "../TopButton";
 
 function MainPage() {
   return (
     <Main>
+      <TopButton />
       <QuickNavBar />
       <SlideBox></SlideBox>
       <ItemSection

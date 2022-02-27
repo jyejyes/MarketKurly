@@ -346,34 +346,6 @@ table input::placeholder {
 
 /* 아이템 상세페이지 */
 
-.item_datail_page {
-  /* width: 1050px; */
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 20px 0px;
-}
-
-.item_detail_title {
-  width: 1050px;
-  display: flex;
-}
-
-.item_detail_title img {
-  width: 42%;
-  height: 80%;
-}
-
-.item_detail_title .detail_title_text {
-  width: 58%;
-  margin: 10px 50px;
-}
-
-.detail_title_text > p {
-  color: var(--gray-color);
-  font-size: var(--small-font);
-}
-
 .detail_title_price {
   padding: 20px 0px;
   border-bottom: 1px solid rgb(241, 241, 241);
@@ -419,45 +391,4 @@ table input::placeholder {
 
 .item_detail_title > p {
   background-color: rgb(90, 21, 124);
-}
-
-.detail_title_purchase {
-  text-align: end;
-  margin: 20px 0px;
-  padding: 0px 0px;
-}
-
-.detail_title_purchase p:nth-child(1) {
-  font-size: var(--small-font);
-}
-
-.detail_title_purchase p:nth-child(1) span {
-  font-size: var(--xlarge-font);
-  font-weight: bold;
-}
-
-.detail_title_purchase p:nth-child(2) {
-  font-size: var(--small-font);
-  font-weight: lighter;
-  margin: 10px 0px;
-}
-
-.detail_title_purchase p:nth-child(2) span {
-  background-color: rgb(252, 197, 47);
-  border: 1px solid rgb(252, 197, 47);
-  border-radius: 15px;
-  font-size: var(--xsmall-font);
-  padding: 1px 7px;
-  color: white;
-  margin-right: 5px;
-}
-
-.itemcart {
-  margin: 50px 0px;
-}
-.itemcartBtn {
-  background-color: var(--main-purple);
-  color: white;
-  text-align: center;
-  padding: 15px 150px;
 }

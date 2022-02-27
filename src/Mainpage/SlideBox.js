@@ -8,6 +8,7 @@ export default function SlideBox() {
   const TOTAL_SLIDES = 8;
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
+  const [img, setImg] = useState([]);
   console.log(`currentSlide: ${currentSlide}`);
 
   // const auto = setInterval(() => {
@@ -29,18 +30,36 @@ export default function SlideBox() {
     slideRef.current.style.transform = `translateX(${-currentSlide * 1900}px)`;
   }, [currentSlide]);
 
+  useEffect(() => {
+    const data = setTimeout(() => {
+      setImg([
+        "./image/slide1",
+        "./image/slide2",
+        "./image/slide3",
+        "./image/slide4",
+        "./image/slide5",
+        "./image/slide6",
+        "./image/slide7",
+        "./image/slide8",
+        "./image/slide9",
+        "./image/slide10",
+      ]);
+    }, 2000);
+    return () => {
+      clearTimeout(data);
+    };
+  });
+
   return (
     <SlideContainer>
       <SlideList ref={slideRef}>
-        <SlideItem src="./image/slide1"></SlideItem>
-        <SlideItem src="./image/slide2"></SlideItem>
-        <SlideItem src="./image/slide3"></SlideItem>
-        <SlideItem src="./image/slide4"></SlideItem>
-        <SlideItem src="./image/slide5"></SlideItem>
-        <SlideItem src="./image/slide6"></SlideItem>
-        <SlideItem src="./image/slide7"></SlideItem>
-        <SlideItem src="./image/slide8"></SlideItem>
-        <SlideItem src="./image/slide9"></SlideItem>
+        {img.length > 0 ? (
+          img.map((item, index) => (
+            <SlideItem key={index} src={item}></SlideItem>
+          ))
+        ) : (
+          <Wait></Wait>
+        )}
       </SlideList>
       <PrevBtn onClick={PrevSlide}>
         <img src="./image/prevBtn.svg" />
@@ -77,4 +96,14 @@ const NextBtn = styled.button`
   top: 160px;
   right: 100px;
   cursor: pointer;
+`;
+
+const Wait = styled.p`
+  width: 100%;
+  margin-bottom: 30px;
+  height: 370px;
+  z-index: 5;
+  background-color: gray;
+  color: white;
+  font-size: var(--xlarge-font);
 `;
