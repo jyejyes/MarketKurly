@@ -54,6 +54,7 @@ const Wrap = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  background-color: white;
 `;
 
 const Container = styled.div`
@@ -89,6 +90,7 @@ const PrevBtn = styled.button`
   position: absolute;
   top: 0;
   left: 0px;
+  background-color: white;
   background-image: url(https://res.kurly.com/pc/etc/old/images/common/slide-sub-left-button-black.png);
   background-repeat: no-repeat;
   background-position: left;
@@ -102,6 +104,7 @@ const NextBtn = styled.button`
   position: absolute;
   top: 0;
   right: 0;
+  background-color: white;
   background-image: url(https://res.kurly.com/pc/etc/old/images/common/slide-sub-right-button-black.png);
   background-repeat: no-repeat;
   background-position: right;

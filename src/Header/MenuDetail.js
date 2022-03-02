@@ -6,7 +6,6 @@ export default function MenuDetail(props) {
   //prop.idx 줌 0,1,2,3 순서대로 들어옴
 
   const cateList = dummy.categoryItem.filter((item) => item.id === props.idx);
-
   return (
     <ListDetailBox>
       {cateList[0].list.map((item, index) => (

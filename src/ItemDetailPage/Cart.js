@@ -1,37 +1,44 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import dummy from "../DB/itemData.json";
+import { addAction, minusAction } from "../reducers/cartReducer";
+import cartReducer from "../reducers/cartReducer";
 
 export default function Cart(props) {
+  const dispatch = useDispatch();
   //props 로 상품 금액 받아온 다음에 곱하는 게산식 넣어야함
-  const [count, setCount] = useState(1);
-  function minus() {
-    setCount(count - 1);
-    if (count <= 0) setCount(0);
-  }
-  function plus() {
-    setCount(count + 1);
-  }
+  const number = useSelector((state) => state.cartReducer);
+  const minus = () => {
+    dispatch(minusAction());
+  };
+  const plus = () => {
+    dispatch(addAction());
+  };
   function comma(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
   return (
     <>
-      <Wrap>
+      <Wrap position={props.position}>
+        <CartBottomText>{props.title}</CartBottomText>
         <EachSection>
-          <Title>구매수량</Title>
+          <Title position={props.position}>구매수량</Title>
         </EachSection>
+        <CartBottomPrice position={props.position}>
+          {comma(props.price)}원
+        </CartBottomPrice>
 
-        <Container>
+        <Container position={props.position}>
           <MinusBtn onClick={minus}> − </MinusBtn>
-          <ShowNum>{count}</ShowNum>
+          <ShowNum>{number}</ShowNum>
           <PlusBtn onClick={plus}> + </PlusBtn>
         </Container>
       </Wrap>
 
       <PriceSection>
         <p>
-          총 상품금액: <span>{comma(props.price * count)} </span>원
+          총 상품금액 : <span>{comma(props.price * number)} </span>원
         </p>
         <p>
           <span>적립</span>로그인 후, 회원할인가와 적립혜택 제공
@@ -40,7 +47,7 @@ export default function Cart(props) {
       <ItemCart>
         <CartImg src="./image/btn-itemdetail-like.svg" />
         <CartImg src="./image/btn-itemdetail-restock-dim.svg" />
-        <CartBtn>장바구니 담기</CartBtn>
+        <CartBtn position={props.position}>장바구니 담기</CartBtn>
       </ItemCart>
     </>
   );
@@ -48,8 +55,25 @@ export default function Cart(props) {
 const Wrap = styled.div`
   display: flex;
   position: relative;
-  padding: 10px 0px;
-  border-bottom: 1px solid rgb(241, 241, 241);
+  align-items: center;
+  padding: ${(props) => (props.position == "top" ? "10px 0px" : "15px ")};
+  margin-top: ${(props) => (props.position == "top" ? "0px" : "20px")};
+  background-color: ${(props) =>
+    props.position == "top" ? "white" : "rgb(247, 247, 247) "};
+  border-bottom: ${(props) =>
+    props.position == "top" ? "1px solid rgb(241, 241, 241);" : "none"};
+`;
+
+const CartBottomPrice = styled.span`
+  display: ${(props) => (props.position == "top" ? "none" : "flex")};
+  position: absolute;
+  right: 50px;
+  font-size: var(--small-font);
+  font-weight: bold;
+`;
+
+const CartBottomText = styled.span`
+  font-size: var(--small-font);
 `;
 
 const EachSection = styled.div`
@@ -59,6 +83,7 @@ const EachSection = styled.div`
 const Title = styled.div`
   color: rgb(100, 100, 100);
   font-size: var(--small-font);
+  display: ${(props) => (props.position == "top" ? "flex" : "none")};
 `;
 
 const Container = styled.div`
@@ -69,7 +94,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
-  left: 140px;
+  left: ${(props) => (props.position == "top" ? "140px" : "550px")};
+  background-color: white;
 `;
 
 const MinusBtn = styled.button`
@@ -92,8 +118,7 @@ const PriceSection = styled.div`
   margin: 20px 0px;
   padding: 0px 0px;
   & > p:nth-child(1) {
-    font-size: var(--small-font);
-    font-weight: bold;
+    font-size: var(--xsmall-font);
   }
   &>p: nth-child(2) {
     font-size: var(--small-font);
@@ -115,8 +140,9 @@ const PriceSection = styled.div`
 `;
 
 const ItemCart = styled.div`
-  margin: 50px 0px;
+  margin: 30px 0px;
   display: flex;
+  justify-content: flex-end;
 `;
 
 const CartImg = styled.img`
@@ -131,7 +157,8 @@ const CartBtn = styled.button`
   background-color: var(--main-purple);
   color: white;
   text-align: center;
-  padding: 15px 145px;
+  padding: ${(props) =>
+    props.position == "top" ? "15px 145px" : "15px 100px"};
   cursor: pointer;
   font-weight: bold;
 `;

@@ -33,10 +33,10 @@ function Item(props) {
       <Price>
         <Discount>{props.discount}%</Discount>
         <RealPrice>
-          {comma(calPrice(props.originalPrice, props.discount))}
+          {comma(calPrice(props.originalPrice, props.discount))}원
         </RealPrice>
       </Price>
-      <OriginalPrice>{comma(props.originalPrice)}</OriginalPrice>
+      <OriginalPrice>{comma(props.originalPrice)}원</OriginalPrice>
     </>
   );
 }

@@ -30,6 +30,7 @@ const Description = styled.section`
   justify-content: center;
   align-items: center;
   margin-bottom: 100px;
+  background-color: white;
   & img {
     width: 1050px;
     margin: 50px 0px;

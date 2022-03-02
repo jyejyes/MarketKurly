@@ -3,10 +3,12 @@ import styled from "styled-components";
 import "../App.css";
 import Delivery from "./Delivery";
 import AllMenu from "./AllMenu";
-import MenuDetail from "./MenuDetail";
+import { useNavigate } from "react-router-dom";
+import dummy from "../DB/itemData.json";
 
 export default function Categories() {
   //fixed 로 바꿔주려고 만드는 함수
+  let navigate = useNavigate();
   const [scrollY, setScrollY] = useState(window.scrollY);
   const cateRef = useRef();
   const handleScroll = () => {
@@ -49,6 +51,18 @@ export default function Categories() {
     setLocationImg(false);
     setLocaPop(false);
   };
+  //검색한 value 받아오는 state
+  const [search, setSearch] = useState(""); // 내가 입력할 검색어
+
+  const inputChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const putItem = () => {
+    if (search.length == 0)
+      alert(" 검색어를 입력해주세요 (일단 임시로 alert 창 띄움)");
+    else navigate(`/search/${search}`);
+  };
 
   return (
     <Wrap>
@@ -65,8 +79,13 @@ export default function Categories() {
 
         <List>
           <div className="search">
-            <SearchSection type="text" placeholder="검색어를 입력해주세요" />
-            <SearchIcon src="./image/ico_search.png" />
+            <SearchSection
+              value={search}
+              type="text"
+              placeholder="검색어를 입력해주세요"
+              onChange={inputChange} // setSearch에 내가 입력한 데이터 넣어주는 과정
+            />
+            <SearchIcon onClick={putItem} src="./image/ico_search.png" />
           </div>
         </List>
 

@@ -6,6 +6,7 @@ export default function Input(props) {
   return (
     <>
       <InputBox
+        value={props.value}
         onFocus={props.onFocus}
         onChange={props.onChange}
         type={props.type}

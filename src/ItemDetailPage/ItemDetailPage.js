@@ -72,6 +72,7 @@ function ItemDetailPage() {
 
             <Cart
               price={calPrice(itemList[0].originalPrice, itemList[0].discount)}
+              position="top"
             ></Cart>
           </ItemDesciption>
         </TitleSection>
@@ -80,6 +81,7 @@ function ItemDetailPage() {
       <ItemDetailMain />
       <BottomBuy
         price={calPrice(itemList[0].originalPrice, itemList[0].discount)}
+        title={itemList[0].itemTitle}
       />
     </>
   );
@@ -97,6 +99,7 @@ const Container = styled.section`
 const TitleSection = styled.div`
   width: 1050px;
   display: flex;
+  background-color: white;
 `;
 
 const ItemImg = styled.img`

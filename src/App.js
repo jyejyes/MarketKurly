@@ -2,47 +2,42 @@ import React from "react";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import MainPage from "./Mainpage/MainPage";
-import QuickNavBar from "./QuickNavBar";
-import Login from "./Login";
+import Login from "./Login/Login";
 import ItemDetailPage from "./ItemDetailPage/ItemDetailPage";
 import Signup from "./Signup/Signup";
-import styled, { createGlobalStyle } from "styled-components";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import Search from "./Search/Search";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Link,
+  useParams,
+} from "react-router-dom";
+import rootReducer from "./reducers";
 
 function App() {
+  const store = createStore(rootReducer);
+
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/header" element={<Header />} />
-        <Route path="/" element={<MainPage />} />
-        <Route path="/footer" element={<Footer />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/itemDetailPage" element={<ItemDetailPage />} />
-      </Routes>
-      <Footer />
+      <Provider store={store}>
+        <Header />
+        <Routes>
+          <Route path="/header" element={<Header />} />
+          <Route path="/" element={<MainPage />} />
+          <Route path="/footer" element={<Footer />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/search/:itemName" element={<Search />} />
+          <Route path="/itemDetailPage" element={<ItemDetailPage />} />
+        </Routes>
+        <Footer />
+      </Provider>
     </>
   );
-}
-
-{
-  /* <Header /> */
-}
-{
-  /* <MainPage /> */
-}
-{
-  /* <Login /> */
-}
-{
-  /* <Signup /> */
-}
-{
-  /* <ItemDetailPage /> */
-}
-{
-  /* <Footer /> */
 }
 
 export default App;

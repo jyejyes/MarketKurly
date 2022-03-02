@@ -2,10 +2,16 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import InfoBox from "./InfoBox";
+import { isLogin } from "../reducers/isLoginReducer";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Information() {
   const [mouse, setMouse] = useState(false);
   let navigate = useNavigate();
+
+  // isLogin: 로그인 여부에 대한 값을 담은 변수?
+  const islogin = useSelector((state) => state.isLoginReducer);
+  console.log(`받아온 값은 : ${islogin}`);
   return (
     <Info>
       <Delivery src="./image/delivery_210801.png" />

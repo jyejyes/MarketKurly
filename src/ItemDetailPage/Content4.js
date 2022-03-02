@@ -20,29 +20,28 @@ export default function Content4(props) {
 
       <Table>
         <tbody>
-          <tr>
-            <td>제목</td>
-            <td>작성자</td>
-            <td>작성일</td>
-            <td>답변상태</td>
-          </tr>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>작성일</th>
+          <th>답변상태</th>
+
           <tr>
             <td>좋은 개발자가 되고싶은데 어떻게 해야하나요</td>
             <td>냐냐</td>
             <td>브리</td>
-            <td>2022-01-22</td>
+            <td>답변완료</td>
           </tr>
           <tr>
-            <td>ㅇㄹㄴㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇ</td>
+            <td>나문의 드립니다</td>
             <td>뇨뇨</td>
             <td>키위</td>
-            <td>2022-01-21</td>
+            <td>답변완료</td>
           </tr>
           <tr>
-            <td>ㄴㅇ리말;ㅐㅓㅇ밈ㄹ</td>
+            <td>문의드립니다</td>
             <td>뉴뉴</td>
             <td>세영</td>
-            <td>2022-01-10</td>
+            <td>답변완료</td>
           </tr>
         </tbody>
       </Table>
@@ -80,7 +79,11 @@ const QText = styled.p`
 
 const Table = styled.table`
   border-bottom: 1px solid black;
-
+  width: 100%;
+  & th {
+    font-size: var(--small-font);
+    padding: 15px 0px;
+  }
   & tr:hover {
     background-color: rgb(250, 250, 250);
   }
@@ -88,18 +91,23 @@ const Table = styled.table`
     font-size: var(--small-font);
     text-align: center;
     padding: 15px 0px;
+    color: rgb(50, 50, 50);
+    border-top: 1px solid #e3e3e3;
   }
   & td:nth-child(1) {
     width: 70%;
   }
   & td:nth-child(2) {
     width: 10%;
+    color: rgb(150, 150, 150);
   }
   & td:nth-child(3) {
     width: 10%;
+    color: rgb(150, 150, 150);
   }
   & td:nth-child(4) {
     width: 10%;
     color: gray;
+    color: var(--main-purple);
   }
 `;

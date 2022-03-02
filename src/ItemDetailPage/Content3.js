@@ -23,15 +23,15 @@ export default function Content3(props) {
         </SortBox>
       </Container>
       <Table>
+        <thead>
+          <th>글번호</th>
+          <th>글제목</th>
+          <th>글작성자</th>
+          <th>글작성일</th>
+          <th>도움</th>
+          <th>조회수</th>
+        </thead>
         <tbody>
-          <tr>
-            <td>글번호</td>
-            <td>글제목</td>
-            <td>글작성자</td>
-            <td>글작성일</td>
-            <td>도움</td>
-            <td>조회수</td>
-          </tr>
           <tr>
             <td>3</td>
             <td>냐냐</td>
@@ -97,15 +97,20 @@ const SortBox = styled.select`
 
 const Table = styled.table`
   border-bottom: 1px solid black;
-  padding: 0;
-  margin: 0;
+  width: 100%;
   & tr:hover {
     background-color: rgb(250, 250, 250);
+  }
+  & th {
+    font-size: var(--xsmall-font);
+    font-weight: lighter;
+    padding: 15px 0px;
   }
   & td {
     font-size: var(--xsmall-font);
     text-align: center;
-    padding: 15px 0px;
+    padding: 15px 15px;
+    border-top: 1px solid #e3e3e3;
   }
   & td:nth-child(1) {
     width: 10%;

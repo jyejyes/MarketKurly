@@ -18,7 +18,7 @@ const Container = styled.p`
   display: flex;
   flex-direction: column;
   font-size: var(--small-font);
-
+  background-color: white;
   border-bottom: 1px solid rgb(241, 241, 241);
   & > div:nth-child(1) {
     padding-top: 15px;

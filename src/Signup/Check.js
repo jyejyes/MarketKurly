@@ -101,7 +101,7 @@ export default function Check() {
             onClick={allCheckChange}
             type="checkbox"
             id="all_check"
-            checked={allCheck}
+            defaultChecked={allCheck}
           ></CheckBox>
           <AllText htmlFor="all_check">전체 동의합니다.</AllText>
           <SmallText>
@@ -114,7 +114,7 @@ export default function Check() {
             onClick={checkChange}
             type="checkbox"
             id="each_check"
-            checked={eachCheck}
+            defaultChecked={eachCheck}
           ></CheckBox>
           <EachText htmlFor="each_check">{title[0]}</EachText>
         </div>
@@ -123,7 +123,7 @@ export default function Check() {
             onClick={checkChange2}
             type="checkbox"
             id="each_check2"
-            checked={eachCheck2}
+            defaultChecked={eachCheck2}
           ></CheckBox>
           <EachText htmlFor="each_check2">{title[1]}</EachText>
         </div>
@@ -132,7 +132,7 @@ export default function Check() {
             onClick={checkChange3}
             type="checkbox"
             id="each_check3"
-            checked={eachCheck3}
+            defaultChecked={eachCheck3}
           ></CheckBox>
           <EachText htmlFor="each_check3">{title[2]}</EachText>
         </div>
@@ -141,7 +141,7 @@ export default function Check() {
             onClick={checkChange4}
             type="checkbox"
             id="each_check4"
-            checked={eachCheck4}
+            defaultChecked={eachCheck4}
           ></CheckBox>
           <EachText htmlFor="each_check4">{title[3]}</EachText>
         </div>
@@ -150,14 +150,14 @@ export default function Check() {
             onClick={checkChild1}
             type="checkbox"
             id="check4_child1"
-            checked={each4Child1}
+            defaultChecked={each4Child1}
           ></CheckBox>
           <EachText htmlFor="check4_child1">SMS</EachText>
           <CheckBox
             onClick={checkChild2}
             type="checkbox"
             id="check4_child2"
-            checked={each4Child2}
+            defaultChecked={each4Child2}
           ></CheckBox>
           <EachText htmlFor="check4_child2">이메일</EachText>
           <EventText>
@@ -171,7 +171,7 @@ export default function Check() {
             onClick={checkChange5}
             type="checkbox"
             id="each_check5"
-            checked={eachCheck5}
+            defaultChecked={eachCheck5}
           ></CheckBox>
           <EachText htmlFor="each_check5">{title[4]}</EachText>
         </div>

@@ -23,6 +23,7 @@ const Container = styled.div`
   flex-direction: column;
   margin-right: 10px;
   border: 1px solid #ddd;
+  background-color: white;
   & img {
     width: 180px;
   }
