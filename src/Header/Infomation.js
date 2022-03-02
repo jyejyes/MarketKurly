@@ -11,7 +11,15 @@ export default function Information() {
 
   // isLogin: 로그인 여부에 대한 값을 담은 변수?
   const islogin = useSelector((state) => state.isLoginReducer);
-  console.log(`받아온 값은 : ${islogin}`);
+  console.log(`받아온 값은 : ${islogin.loginState}`);
+
+  //로그아웃
+  const dispatch = useDispatch();
+  const gologout = (loginState) => dispatch(isLogin(loginState));
+  const onLogout = () => {
+    gologout(false);
+  };
+
   return (
     <Info>
       <Delivery src="./image/delivery_210801.png" />
@@ -22,7 +30,22 @@ export default function Information() {
           </ListTextPurple>
         </List>
         <List>
-          <ListText onClick={() => navigate("/login")}>로그인</ListText>
+          <ListText
+            style={
+              islogin.loginState ? { display: "none" } : { display: "flex" }
+            }
+            onClick={() => navigate("/login")}
+          >
+            로그인
+          </ListText>
+          <ListTextLogout
+            style={
+              islogin.loginState ? { display: "flex" } : { display: "none" }
+            }
+            onClick={onLogout}
+          >
+            로그아웃
+          </ListTextLogout>
         </List>
         <List>
           <ListText
@@ -65,6 +88,11 @@ const Delivery = styled.img`
 
 const ListText = styled.div`
   cursor: pointer;
+`;
+
+const ListTextLogout = styled(ListText)`
+  cursor: pointer;
+  display: none;
 `;
 
 const ListTextPurple = styled(ListText)`

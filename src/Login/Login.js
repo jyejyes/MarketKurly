@@ -25,8 +25,10 @@ function Login() {
   //users: 스토어에서 아이디 저장된 부분 가져온거
   const users = useSelector((state) => state.addUserReducer);
 
+  // 테스트
   const dispatch = useDispatch();
   const gologin = (loginState) => dispatch(isLogin(loginState));
+
   const onLogin = (e) => {
     e.preventDefault();
     let isUser = ""; // 유저가 맞는지 검사하는 변수
@@ -37,6 +39,8 @@ function Login() {
       for (let i in users) {
         if (users[i].idtext == id && users[i].pwtext == pw) {
           isUser = true;
+          gologin(true);
+          navigate("/");
           break;
         } else {
           isUser = false;
@@ -45,7 +49,6 @@ function Login() {
       isUser
         ? alert(`환영합니다. ${id}님 쇼핑을 시작하세요`)
         : alert("아이디 혹은 비밀번호를 확인해주세요");
-      gologin(true);
     }
   };
 

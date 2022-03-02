@@ -9,7 +9,6 @@ export default function SlideBox() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
   const [img, setImg] = useState([]);
-  console.log(`currentSlide: ${currentSlide}`);
 
   // const auto = setInterval(() => {
   //   setCurrentSlide(currentSlide + 1);
